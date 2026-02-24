@@ -1,0 +1,24 @@
+<div class="contenedor">
+ 
+  <h2>Geolocalización del Usuario</h2>
+ 
+  <button (click)="obtenerUbicacion()">Obtener ubicación</button>
+ 
+  @if (ubicacion) {
+    <div class="resultado">
+      <p><strong>Latitud:</strong> {{ ubicacion?.latitud }}</p>
+      <p><strong>Longitud:</strong> {{ ubicacion?.longitud }}</p>
+      <p><strong>Precisión:</strong> {{ ubicacion?.precision }} metros</p>
+ 
+      <iframe
+        width="80%"
+        height="300"
+        [src]="urlMapa">
+      </iframe>
+    </div>
+  }
+ 
+  @if(error) {
+    <p class="error">{{ error }}</p>
+  }
+</div>

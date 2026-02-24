@@ -1,0 +1,46 @@
+<div class="container-fluid py-4 bg-light min-vh-100">
+  <div class="row g-4">
+    
+    <div class="col-12 col-lg-3">
+      <div class="card shadow-sm border-0 h-100 sticky-lg-top" style="top: 20px; border-radius: 20px;">
+        <div class="card-body text-center p-4">
+          <div class="position-relative d-inline-block mb-3 profile-container">
+            <img [src]="perfil.picture" 
+                 class="rounded-circle img-thumbnail shadow-sm profile-img" 
+                 width="100" height="100" 
+                 alt="Foto de perfil">
+            <span class="position-absolute bottom-0 end-0 p-2 bg-success border border-3 border-white rounded-circle pulse-animation">
+              <span class="visually-hidden">En línea</span>
+            </span>
+          </div>
+          
+          <h5 class="card-title fw-bold mb-1">{{perfil.name}}</h5>
+          <p class="text-muted small mb-0">Usuario Conectado</p>
+          <p class="badge bg-primary-subtle text-primary rounded-pill mt-2 px-3">Administrador</p>
+          
+          <hr class="my-4 text-secondary opacity-25">
+          
+          <div class="d-grid">
+            <button (click)="cerrarSesion()" class="btn btn-outline-danger btn-sm rounded-pill shadow-sm py-2 fw-semibold">
+              <i class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-9">
+      <div class="card shadow-sm border-0 overflow-hidden" style="border-radius: 20px;">
+        <div class="card-header bg-white border-0 py-3 ps-4">
+          <h5 class="mb-0 fw-bold text-dark">
+            <i class="bi bi-geo-alt-fill text-danger me-2"></i>Localización del Usuario
+          </h5>
+        </div>
+        <div class="card-body p-0">
+          <app-mapa></app-mapa>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
